@@ -69,3 +69,27 @@ If you'd like to change the source file LJM looks for, you can do so as follows.
 - Execute the following command: `java -jar ljm.jar <your source here>`
 
 Your source does not have to be a `.txt` file, but it should still adhere to the same syntax guidelines.
+
+## Full Execution Guide
+This guide walks you through all the steps LVM takes to manage JAR files.
+- Locate a file (by default, this file is `ljm-sources.txt`) and read its contents.
+- Parse those contents into a set of `LjmJar` objects.
+- Download each of the JARs.
+  - The JAR's local path is equal to the file name.
+  - The JAR's remote path is equal to the URL.
+- Write each JAR file to the `/ljm/` directory.
+
+It's strongly suggested that you make use of a `.gitignore` file, so you don't have any binaries in a Git repo. 
+
+## Advantages to using LJM
+To clarify - LJM should NOT be used in place of a build system such as Gradle. LJM simply provides an easy way to
+locally download JAR files.
+- Can operate without internet connection. With LJM, you have to execute `ljm.jar` one single time, and all of your
+  JAR files will be downloaded. Unless you manually delete them, they will remain exactly where you put them.
+- Incredibly lightweight. LJM, as mentioned before, is a very small application. It will only minimally affect
+  the size of your Git repository.
+- Provides an easy way for people to get "on the same page." If a team of people are collectively working on a project
+  that requires several JAR binaries to be downloaded locally, LJM allows that. The Git repository everyone is working
+  on should contain a file like `ljm-sources.txt` as well as the `ljm.jar` application. Whenever someone wants to
+  start working on the project, they just need to download the repository and run the `ljm.jar` - and boom! All of your
+  dependencies are stored locally without having to worry about version discrepancies or anything of the sort.
