@@ -1,0 +1,2 @@
+(Example Jar, example.jar, https://google.com);
+(Another Jar, another.jar, https://google.com);
