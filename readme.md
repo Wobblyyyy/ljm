@@ -94,5 +94,8 @@ locally download JAR files.
   start working on the project, they just need to download the repository and run the `ljm.jar` - and boom! All of your
   dependencies are stored locally without having to worry about version discrepancies or anything of the sort.
   
-  ## JavaDoc
-  View LJM's JavaDoc [here](https://wobblyyyy.github.io/JavaDocs/ljm/).
+## JavaDoc
+View LJM's JavaDoc [here](https://wobblyyyy.github.io/JavaDocs/ljm/).
+
+## Video Guide
+Click [here](https://www.youtube.com/watch?v=bSVmbf_HxRo) for a full video guide on how to use LJM.
